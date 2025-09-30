@@ -11,8 +11,11 @@ html_names = [os.path.splitext(f)[0] for f in html_files]
 # Expresión regular para encontrar href="/nombre" o href="/nombre/"
 href_pattern = re.compile(r'href="/([^"/]*)(/?)"')
 
-# Expresión regular para el caso del logo
+# Expresión regular para el caso del logo específico
 logo_pattern = re.compile(r'<a\s+id="logo"\s+href="https://hogaresjuvenilescampesinos\.org"')
+
+# Expresión regular para cualquier href con el dominio exacto
+domain_pattern = re.compile(r'href="https://hogaresjuvenilescampesinos\.org"')
 
 for html_file in html_files:
     file_path = os.path.join(directory, html_file)
@@ -31,6 +34,7 @@ for html_file in html_files:
     # Reemplazos
     new_content = href_pattern.sub(replace_href, content)
     new_content = logo_pattern.sub('<a id="logo" href="index.html"', new_content)
+    new_content = domain_pattern.sub('href="index.html"', new_content)
 
     # Guarda solo si hubo cambios
     if new_content != content:

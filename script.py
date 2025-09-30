@@ -8,8 +8,8 @@ directory = os.path.dirname(os.path.abspath(__file__))
 html_files = [f for f in os.listdir(directory) if f.endswith('.html')]
 html_names = [os.path.splitext(f)[0] for f in html_files]
 
-# Expresión regular para encontrar href="/nombre"
-href_pattern = re.compile(r'href="/([^"]+)"')
+# Expresión regular para encontrar href="/nombre" o href="/nombre/"
+href_pattern = re.compile(r'href="/([^"/]+)(/?)"')
 
 for html_file in html_files:
     file_path = os.path.join(directory, html_file)

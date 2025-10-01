@@ -5624,6 +5624,8 @@ header.mfn-header-tmpl-absolute{
 	padding-right: 15px !important;
 }
 }
+
+/* Flechas de submenú siempre visibles */
 .menu-item-has-children > a > span i.fas.fa-angle-down {
   display: inline !important;
   opacity: 1 !important;

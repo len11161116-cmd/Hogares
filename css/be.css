@@ -5624,3 +5624,7 @@ header.mfn-header-tmpl-absolute{
 	padding-right: 15px !important;
 }
 }
+.menu-item-has-children > a > span i.fas.fa-angle-down {
+  display: inline !important;
+  opacity: 1 !important;
+}
